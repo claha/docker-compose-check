@@ -1,0 +1,7 @@
+---
+- id: check-registry
+  name: Check Docker Compose Registry
+  description: Ensure all images in Docker Compose have a defined registry.
+  entry: check_registry.py
+  language: script
+  files: (docker-)?compose\.y(a)?ml(\.j2)?$
