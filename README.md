@@ -12,16 +12,22 @@ registry. Valid filenames are `docker-compose.yaml` and `compose.yaml`, includin
 the shorter extension `.yml`. Also supports jinja2 templates, i.e. a second extension
 `.j2` after the previously mentioned filenames.
 
-### Installation
+## Socket check
+
+A pre-coomit hook that ensures all bind mounts of the docker.sock is read-only.
+
+## Configuration
 
 Create a `.pre-commit-config.yaml` in your repository (if it doesn't already exist)
 and add this repository to it:
 
 ```yaml
 repos:
--   repo: https://github.com/claha/docker-compose-check
-    rev: v0.1.0  # Use the ref you want
+  - repo: https://github.com/claha/docker-compose-check
+    rev: v0.2.0  # Use the ref you want
     hooks:
-    -   id: check-registry
+      - id: check-registry
         args: ['--allowed_registries=docker.io,quay.io,my.custom.registry']  # Optional
+      - id: check-socket
+
 ```

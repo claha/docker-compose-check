@@ -5,3 +5,9 @@
   entry: check_registry.py
   language: script
   files: (docker-)?compose\.y(a)?ml(\.j2)?$
+- id: check-socket
+  name: Check Docker Socket Bind Mount
+  description: Ensure all bind mount of docker.sock in Docker Compose is read-only.  # yamllint disable-line rule:line-length
+  entry: check_socket.py
+  language: script
+  files: (docker-)?compose\.y(a)?ml(\.j2)?$
