@@ -28,7 +28,7 @@ def check_registry(line, allowed_registries):
 def main():
     """Parse arguments, read and validate Docker Compose files based on the provided or default registry order."""
     parser = argparse.ArgumentParser(
-        description="Check Docker Compose for registry in image declarations."
+        description="Check Docker Compose for registry in image declarations.",
     )
     parser.add_argument("files", nargs="+", help="Docker Compose files to check.")
     parser.add_argument(
@@ -41,11 +41,11 @@ def main():
     args = parser.parse_args()
 
     for docker_compose_file in args.files:
-        with open(docker_compose_file, "r") as file:
+        with open(docker_compose_file) as file:
             for line in file.readlines():
                 if not check_registry(line, args.allowed_registries):
                     print(
-                        f"Invalid registry for '{line.strip()}' in {docker_compose_file}"
+                        f"Invalid registry for '{line.strip()}' in {docker_compose_file}",
                     )
                     sys.exit(1)
     sys.exit(0)
