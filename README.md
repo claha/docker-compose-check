@@ -16,6 +16,11 @@ the shorter extension `.yml`. Also supports jinja2 templates, i.e. a second exte
 
 A pre-coomit hook that ensures all bind mounts of the docker.sock is read-only.
 
+## No new privileges check
+
+A pre-coomit hook that ensures all docker compose files set no-new-privileges to
+true.
+
 ## Configuration
 
 Create a `.pre-commit-config.yaml` in your repository (if it doesn't already exist)
@@ -29,5 +34,5 @@ repos:
       - id: check-registry
         args: ['--allowed_registries=docker.io,quay.io,my.custom.registry']  # Optional
       - id: check-socket
-
+      - id: check-no-new-privileges
 ```

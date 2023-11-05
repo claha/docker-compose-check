@@ -11,3 +11,9 @@
   entry: check_socket.py
   language: script
   files: (docker-)?compose\.y(a)?ml(\.j2)?$
+- id: check-no-new-privileges
+  name: Check Docker Compose No New Privileges
+  description: Ensure all Docker Compose files sets no-new-privileges to true.
+  entry: check_no_new_privileges.py
+  language: script
+  files: (docker-)?compose\.y(a)?ml(\.j2)?$
