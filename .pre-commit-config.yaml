@@ -12,7 +12,7 @@ repos:
       - id: check-shebang-scripts-are-executable
 
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.35.0
+    rev: v1.35.1
     hooks:
       - id: yamllint
         exclude: vars/vault.yaml
