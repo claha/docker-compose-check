@@ -66,6 +66,6 @@ repos:
           - --ignore=E501
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.6
+    rev: v2.3.0
     hooks:
       - id: codespell
