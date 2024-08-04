@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """Checking docker compose files to ensure that no-new-privileges is set to true."""
+
 import argparse
 import sys
 
