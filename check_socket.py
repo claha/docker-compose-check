@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """Checking docker compose files to ensure that all bind mounts of docker.sock is read-only."""
+
 import argparse
 import sys
 

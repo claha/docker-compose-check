@@ -3,6 +3,7 @@
 
 Users can customize the list of allowed registries.
 """
+
 import argparse
 import sys
 
